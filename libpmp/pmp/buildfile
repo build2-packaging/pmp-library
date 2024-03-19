@@ -8,6 +8,9 @@ lib{pmp}: {hxx cxx}{**} $impl_libs $intf_libs
 #
 cxx.poptions =+ "-I$out_root" "-I$src_root"
 
+if ($cxx.target.class == 'windows')
+  cxx.poptions += -D_USE_MATH_DEFINES -DNOMINMAX
+
 obja{*}: cxx.poptions += -DLIBPMP_STATIC_BUILD
 objs{*}: cxx.poptions += -DLIBPMP_SHARED_BUILD
 

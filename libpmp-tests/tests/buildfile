@@ -2,3 +2,15 @@ import libs = libpmp%lib{pmp}
 import libs += gtest%liba{gtest_main}
 
 exe{tests}: {hxx cxx}{**} $libs testscript
+
+if ($cxx.target.class == 'windows')
+  cxx.poptions += -D_CRT_SECURE_NO_WARNINGS
+
+switch $cxx.id
+{
+  case 'msvc'
+    cxx.coptions += /wd4267 /wd4244 /wd4305
+
+  case 'gcc' | 'clang' | 'clang-apple'
+    cxx.coptions += -Wno-deprecated-copy -Wno-int-in-bool-context
+}

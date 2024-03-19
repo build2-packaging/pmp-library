@@ -21,12 +21,10 @@ lib{pmp}:
 
 if ($cxx.target.class == 'windows')
 {
-  cxx.poptions += -D_USE_MATH_DEFINES -DNOMINMAX
+  cxx.poptions += -D_USE_MATH_DEFINES -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
   lib{pmp}: cxx.export.poptions += -D_USE_MATH_DEFINES
 }
 
-# Remove unnecessary warnings.
-#
 switch $cxx.id
 {
   case 'msvc'

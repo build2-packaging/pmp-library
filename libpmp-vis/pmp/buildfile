@@ -1,10 +1,10 @@
 import intf_libs = libpmp%lib{pmp}
 import intf_libs += libimgui-platform-glfw%lib{imgui-platform-glfw}
 import intf_libs += libimgui-render-opengl3%lib{imgui-render-opengl3}
+import intf_libs += glew%lib{glew}
 
 import impl_libs = stb_image%lib{stb_image}
 import impl_libs += stb_image_write%lib{stb_image_write}
-import impl_libs += glew%lib{glew}
 
 lib{pmp-vis}: ../{hxx cxx}{*} {hxx cxx}{**} $impl_libs $intf_libs
 

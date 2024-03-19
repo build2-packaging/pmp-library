@@ -1,0 +1,3 @@
+import libs = libpmp-vis%lib{pmp-vis}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

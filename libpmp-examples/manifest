@@ -1,0 +1,24 @@
+: 1
+name: libpmp-examples
+version: 3.0.0
+type: exe
+language: c++
+project: pmp-library
+summary: C++ library for processing and visualizing polygon surface meshes; Examples
+license: MIT
+
+description-file: README.md
+changes-file: CHANGELOG.md
+url: https://www.pmp-library.org/
+doc-url: https://www.pmp-library.org/
+src-url: https://github.com/pmp-library/pmp-library
+
+package-description-file: PACKAGE-README.md
+package-url: https://github.com/build2-packaging/pmp-library/
+package-email: packaging@build2.org
+
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
+
+depends: libpmp == $
+depends: libpmp-vis == $

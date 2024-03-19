@@ -1,0 +1,2 @@
+ln --no-cleanup -s $src_root/data data;
+$* 1>&2 2>| &*** == 0

@@ -1,0 +1,29 @@
+: 1
+name: libpmp-vis
+version: 3.0.0
+type: lib
+language: c++
+project: pmp-library
+summary: C++ library for processing and visualizing polygon surface meshes; Visualization Module
+license: MIT
+
+description-file: README.md
+changes-file: CHANGELOG.md
+url: https://www.pmp-library.org/
+doc-url: https://www.pmp-library.org/
+src-url: https://github.com/pmp-library/pmp-library
+
+package-description-file: PACKAGE-README.md
+package-url: https://github.com/build2-packaging/pmp-library/
+package-email: packaging@build2.org
+
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
+
+depends: libpmp == $
+
+depends: stb_image ^2.28.0
+depends: stb_image_write ^1.16.0
+depends: glew ^2.2.0
+depends: libimgui-render-opengl3 ^1.88.0
+depends: libimgui-platform-glfw ^1.88.0

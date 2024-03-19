@@ -1,0 +1,1 @@
+./: {*/ -build/ -data/} doc{*.md} legal{LICENSE.txt} manifest data/file{**}

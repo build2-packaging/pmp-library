@@ -1,0 +1,4 @@
+import libs = libpmp%lib{pmp}
+import libs += gtest%liba{gtest_main}
+
+exe{tests}: {hxx cxx}{**} $libs testscript

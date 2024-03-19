@@ -1,0 +1,45 @@
+import intf_libs = libpmp%lib{pmp}
+import intf_libs += libimgui-platform-glfw%lib{imgui-platform-glfw}
+import intf_libs += libimgui-render-opengl3%lib{imgui-render-opengl3}
+
+import impl_libs = stb_image%lib{stb_image}
+import impl_libs += stb_image_write%lib{stb_image_write}
+import impl_libs += glew%lib{glew}
+
+lib{pmp-vis}: ../{hxx cxx}{*} {hxx cxx}{**} $impl_libs $intf_libs
+
+# Build options.
+#
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+obja{*}: cxx.poptions += -DLIBPMP_STATIC_BUILD
+objs{*}: cxx.poptions += -DLIBPMP_SHARED_BUILD
+
+# Export options.
+#
+lib{pmp-vis}:
+{
+  cxx.export.poptions = "-I$out_root" "-I$src_root"
+  cxx.export.libs = $intf_libs
+}
+
+liba{pmp-vis}: cxx.export.poptions += -DLIBPMP_STATIC
+libs{pmp-vis}: cxx.export.poptions += -DLIBPMP_SHARED
+
+# For pre-releases use the complete version to make sure they cannot
+# be used in place of another pre-release or the final version. See
+# the version module for details on the version.* variable values.
+#
+if $version.pre_release
+  lib{pmp-vis}: bin.lib.version = "-$version.project_id"
+else
+  lib{pmp-vis}: bin.lib.version = "-$version.major.$version.minor"
+
+# Install into the libpmp/ subdirectory of, say, /usr/include/
+# recreating subdirectories.
+#
+hxx{*}:
+{
+  install         = include/pmp/
+  install.subdirs = true
+}

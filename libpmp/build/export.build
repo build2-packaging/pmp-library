@@ -1,0 +1,6 @@
+$out_root/
+{
+  include pmp/
+}
+
+export $out_root/pmp/$import.target

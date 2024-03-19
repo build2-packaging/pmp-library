@@ -1,0 +1,23 @@
+import pmp = libpmp%lib{pmp}
+import pmp_vis = libpmp-vis%lib{pmp-vis}
+
+./: exe{basics}: cxx{basics} $pmp
+./: exe{io}: cxx{io} $pmp
+./: exe{iterators}: cxx{iterators} $pmp
+./: exe{barycenter}: cxx{barycenter} $pmp
+./: exe{properties}: cxx{properties} $pmp
+./: exe{eigen}: cxx{eigen} $pmp
+
+./: exe{mview}: cxx{mview} $pmp_vis
+./: exe{curvature}: cxx{curvature} $pmp_vis
+./: exe{subdivision}: cxx{subdivision} $pmp_vis
+./: exe{smoothing}: cxx{smoothing} $pmp_vis
+./: exe{fairing}: cxx{fairing} $pmp_vis
+./: exe{parameterization}: cxx{parameterization} $pmp_vis
+./: exe{decimation}: cxx{decimation} $pmp_vis
+./: exe{remeshing}: cxx{remeshing} $pmp_vis
+./: exe{hole_filling}: cxx{hole_filling} $pmp_vis
+
+./: exe{mpview}: {hxx cxx}{mesh_processing_viewer} cxx{mpview} $pmp_vis
+
+# cxx.poptions =+ "-I$out_root" "-I$src_root"

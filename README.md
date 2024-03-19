@@ -42,6 +42,7 @@ There are no configuration options available.
     + Library Name: To be consistent with programming practices, we wanted the library name to be the name of the upstream include folder: `lib{pmp}`
     + Package Name: According to the recommended build2 practices, the respective library package gets the prefix `lib` and its name becomes `libpmp`.
     + Similar for `lib{pmp-vis}` in package `libpmp-vis`
+- For `aarch64-linux-gnu` targets using GCC the `loop_subdivision` tests of the `libpmp` package fail with `terminate called after throwing an instance of 'pmp::InvalidInputException'` and `what():  loop_subdivision: Not a triangle mesh.`. This is an upstream issue and is probably already fixed for the next version.
 
 ## Contributing
 Thanks in advance for your help and contribution to keep this package up-to-date.

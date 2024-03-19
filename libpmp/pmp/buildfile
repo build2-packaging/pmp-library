@@ -18,7 +18,7 @@ objs{*}: cxx.poptions += -DLIBPMP_SHARED_BUILD
 #
 lib{pmp}:
 {
-  cxx.export.poptions = "-I$out_root" "-I$src_root"
+  cxx.export.poptions = "-I$out_root" "-I$src_root" -D_USE_MATH_DEFINES
   cxx.export.libs = $intf_libs
 }
 

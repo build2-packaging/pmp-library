@@ -19,5 +19,3 @@ import pmp_vis = libpmp-vis%lib{pmp-vis}
 ./: exe{hole_filling}: cxx{hole_filling} $pmp_vis
 
 ./: exe{mpview}: {hxx cxx}{mesh_processing_viewer} cxx{mpview} $pmp_vis
-
-# cxx.poptions =+ "-I$out_root" "-I$src_root"

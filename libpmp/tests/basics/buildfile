@@ -1,3 +1,4 @@
 import libs = libpmp%lib{pmp}
 
-exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}
+./: exe{driver}: {hxx cxx}{**} $libs testscript
+./: file{input.obj}

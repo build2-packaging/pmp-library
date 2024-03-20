@@ -1,0 +1,2 @@
+ln -s $src_base/input.obj input.obj;
+$* &output.obj == 0

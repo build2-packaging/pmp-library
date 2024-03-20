@@ -41,6 +41,8 @@
 !*manifest
 !*testscript
 
-# Allow directory and files to test output against.
+# Allow directory and files to test I/O.
 #
 !libpmp-tests/data
+!*.obj
+!*.off

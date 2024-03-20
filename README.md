@@ -4,8 +4,8 @@ This project is a [build2](https://build2.org) package repository that provides 
 
 [![Official](https://img.shields.io/website/https/github.com/pmp-library/pmp-library.svg?down_message=offline&label=Official&style=for-the-badge&up_color=blue&up_message=online)](https://github.com/pmp-library/pmp-library)
 [![build2](https://img.shields.io/website/https/github.com/build2-packaging/pmp-library.svg?down_message=offline&label=build2&style=for-the-badge&up_color=blue&up_message=online)](https://github.com/build2-packaging/pmp-library)
-[![cppget.org](https://img.shields.io/website/https/cppget.org/pmp-library.svg?down_message=offline&label=cppget.org&style=for-the-badge&up_color=blue&up_message=online)](https://cppget.org/pmp-library)
-[![queue.cppget.org](https://img.shields.io/website/https/queue.cppget.org/pmp-library.svg?down_message=empty&down_color=blue&label=queue.cppget.org&style=for-the-badge&up_color=orange&up_message=running)](https://queue.cppget.org/pmp-library)
+[![cppget.org](https://img.shields.io/website/https/cppget.org/libpmp.svg?down_message=offline&label=cppget.org&style=for-the-badge&up_color=blue&up_message=online)](https://cppget.org/libpmp)
+[![queue.cppget.org](https://img.shields.io/website/https/queue.cppget.org/libpmp.svg?down_message=empty&down_color=blue&label=queue.cppget.org&style=for-the-badge&up_color=orange&up_message=running)](https://queue.cppget.org/libpmp)
 
 ## Usage
 Make sure to add the stable section of the [`cppget.org`](https://cppget.org/?about) repository to your project's `repositories.manifest` to be able to fetch this package.
@@ -44,7 +44,7 @@ There are no configuration options available.
     + Similar for `lib{pmp-vis}` in package `libpmp-vis`
 - For `aarch64-linux-gnu` targets using GCC the `loop_subdivision` tests of the `libpmp` package fail with `terminate called after throwing an instance of 'pmp::InvalidInputException'` and `what():  loop_subdivision: Not a triangle mesh.`. This is an upstream issue and is probably already fixed for the next version.
 - The package `libpmp-vis` fails on various CI configurations due to the required OpenGL-based libraries, like GLFW and GLEW.
-- Library `lib{pmp}` from `libpmp` package exports `-D_USE_MATH_DEFINES` and `-DNOMINMAX` macros on Windows to properly function.
+- Library `lib{pmp}` from `libpmp` package exports `_USE_MATH_DEFINES` and `NOMINMAX` macros on Windows to properly function.
 - `pmp-library` supports OpenMP. Enabling OpenMP in the compile options of your configuration will also compile the library with its builtin parallelization.
 - `pmp-library` supports 64-bit scalars and index types when the macros `PMP_SCALAR_TYPE_64` and `PMP_INDEX_TYPE_64` are used for compilation (and probably export as well). Currently, this is not supported in the package.
 - `pmp-library` supports Emscripten. Most of the required upstream options have not been added to the package so far.

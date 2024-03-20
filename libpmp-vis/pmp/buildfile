@@ -26,7 +26,7 @@ lib{pmp-vis}:
 }
 
 if ($cxx.target.class == 'windows')
-  cxx.poptions += -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS
+  cxx.poptions += -D_CRT_SECURE_NO_WARNINGS
 
 switch $cxx.id
 {

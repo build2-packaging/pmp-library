@@ -1,0 +1,9 @@
+: 1
+name: libpmp-tests
+version: 3.0.0
+type: exe
+language: c++
+project: pmp-library
+summary: C++ library for processing and visualizing polygon surface meshes;\
+ Tests
+license: MIT

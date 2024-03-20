@@ -1,0 +1,9 @@
+: 1
+name: libpmp-vis
+version: 3.0.0
+type: lib
+language: c++
+project: pmp-library
+summary: C++ library for processing and visualizing polygon surface meshes;\
+ Visualization Module
+license: MIT

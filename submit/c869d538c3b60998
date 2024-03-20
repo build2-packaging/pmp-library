@@ -1,0 +1,9 @@
+: 1
+name: libpmp
+version: 3.0.0
+type: lib
+language: c++
+project: pmp-library
+summary: C++ library for processing and visualizing polygon surface meshes;\
+ Core Module
+license: MIT

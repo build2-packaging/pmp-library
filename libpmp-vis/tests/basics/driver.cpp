@@ -1,4 +1,4 @@
-#include <pmp/visualization/shader.h>
+#include <pmp/visualization/mesh_viewer.h>
 
 #undef NDEBUG
 #include <cassert>
